@@ -1,0 +1,24 @@
+<footer style="padding-bottom: 200px;">
+			
+		</footer>
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="assets/js/bootstrap.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$('a[href^="#"]').click(function(){
+					var the_id = $(this).attr("href");
+					var speed = 1200;
+					var value = the_id.lastIndexOf("ink-");
+	
+				if(value == 1){
+					$('html, body').animate({
+						scrollTop:$(the_id).offset().top
+					}, speed);
+					return false;
+				}
+			});
+		</script>
+	</body>
+</html>

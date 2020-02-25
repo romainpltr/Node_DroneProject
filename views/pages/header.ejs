@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> RESCUE DRONE </title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="assets/css/bootstrap.css" crossorigin="anonymous">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			   	<a class="navbar-brand" href="#">RESCUE DRONE</a>
+			   	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 	navigation">
+			    	  <span class="navbar-toggler-icon"></span>
+			    </button>
+			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    	<ul class="navbar-nav mr-auto">
+			    	  <li class="nav-item active">
+			    	    <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+			    	  </li>
+			    	  <li class="nav-item">
+			    	    <a class="nav-link" href="#ink-project">Le Projet</a>
+			    	  </li>
+			    	  <li class="nav-item">
+			    	    <a class="nav-link" href="#ink-staff">Notre équipe</a>
+			    	  </li>
+			    	</ul>
+			    	<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+			    	  <li class="nav-item">
+			    	    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#connexion">Connexion / Inscription</button>
+			    	  </li>
+			    	</ul>
+			    	<div class="modal fade bd-example-modal-lg" id="connexion" tabindex="-1" role="dialog" aria-labelledby="connexion" aria-hidden="true">
+			      		<div class="modal-dialog modal-lg" role="document">
+			        		<div class="modal-content">
+			          			<div class="modal-header">
+			            			<h5 class="modal-title" id="connexion">Connexion / Inscription</h5>
+			            			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			              				<span aria-hidden="true">&times;</span>
+			            			</button>
+			          			</div>
+
+			          			<div class="modal-body">
+			            			<div class="container">
+			              				<div class="row">
+
+			              					<!-- LOGIN FORM -->
+			                				<div class="col" style="padding-top: 25px;">
+			                  					<center><h4>CONNEXION</h4></center>
+			                  					<br>
+			                  					<form action="/" method="post">
+			                  					  <div class="form-group">
+			                  					    <label for="co-email">Adresse email :</label>
+			                  					    <input type="email" class="form-control" name="coemail" id="coemail" aria-describedby="emailHelp" placeholder="Entrez votre email">
+			                  					  </div>
+			                  					  <div class="form-group">
+			                  					    <label for="co-password">Mot de passe :</label>
+			                  					    <input type="password" class="form-control" name="copassword" id="copassword" placeholder="Mot de passe">
+			                  					  </div>
+			                  					  <div class="form-check">
+			                  					    <label class="form-check-label">
+			                  					    <input type="checkbox" class="form-check-input">
+			                  					      Se souvenir de moi
+			                  					    </label>
+			                  					  </div>
+			                  					  <div class="float-right"><button type="submit" class="btn btn-primary">Se connecter</button></div>
+			                  					</form>
+			                				</div>
+
+			                				<!-- LINE -->
+			                				<div class="verticalborder"></div>
+			                				<!-- LINE -->
+
+			                				<!-- REGISTER FORM -->
+			                				<div class="col" style="padding-top: 25px;">
+			                					<% if (locals.errorins) { %>
+                  				<div class="container">
+                  					<div class="alert alert-danger" role="alert">
+                  						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  											<span aria-hidden="true">&times;</span>
+										</button>
+                    					<%= errorins %>
+                  					</div>
+                  				</div>
+                  					<% } %>
+
+			                  					<center><h4>INSCRIPTION</h4></center>
+
+			                  					<br>
+			                  					<form action="/" method="post">
+			                   						<div class="form-group">
+			                   						  <label for="name">Nom :</label>
+			                   						  <input type="name" class="form-control" name="insname" id="insname" aria-describedby="emailHelp" placeholder="Entrez votre nom">
+			                   						</div>
+			                   						<div class="form-group">
+			                   						  <label for="name">Prénom :</label>
+			                   						  <input type="name" class="form-control" name="insname2" id="insname2" aria-describedby="emailHelp" placeholder="Entrez votre nom">
+			                   						</div>
+			                   						<div class="form-group">
+			                   						  <label for="email">Adresse email :</label>
+			                   						  <input type="email" class="form-control" name="insemail" id="insemail" aria-describedby="emailHelp" placeholder="Entrez votre email">
+			                   						  <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre courrier électronique avec quelqu'un d'autre.</small>
+			                   						</div>
+			                   						<div class="form-group">
+			                   						  <label for="email">Confirmation de votre adresse email :</label>
+			                   						  <input type="email" class="form-control" name="insemail2" id="insemail2" aria-describedby="emailHelp" placeholder="Entrez votre email">
+			                   						</div>
+			                   						<div class="form-group">
+			                   						  <label for="ins-password">Mot de passe :</label>
+			                   						  <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+			                   						</div>
+			                   						<div class="form-group">
+			                   						  <label for="ins-password">Confirmation de votre mot de passe :</label>
+			                   						  <input type="password" class="form-control" name="passwordverif" id="passwordverif" placeholder="Password">
+			                   						</div>
+			                   						<div class="float-right"><button type="submit" class="btn btn-lg btn-danger">Inscription</button></div>
+			                    					<br>
+			                    					<br>
+			                    					<br>
+			                  					</form>
+			                				</div>
+			              				</div>
+			            			</div>
+			          			</div>
+			        		</div>
+			      		</div>
+			    	</div>
+				</div>
+			</nav>
+		</header>
